@@ -25,28 +25,28 @@ class ProjectMember(models.Model):
         db_table = "project_members"
 
 
-# class Task(models.Model):
-#     STATUS_CHOICES = [
-#         ('To Do', 'To Do'),
-#         ('In Progress', 'In Progress'),
-#         ('Done', 'Done')
-#     ]
-#     PRIORITY_CHOICES = [
-#         ('Low', 'Low'), 
-#         ('Medium', 'Medium'),
-#         ('High', 'High')
-#     ]
-#     title = models.CharField(max_length=255)
-#     description = models.TextField()
-#     status = models.CharField(max_length=20, choices=STATUS_CHOICES)
-#     priority = models.CharField(max_length=20, choices=PRIORITY_CHOICES)
-#     assigned_to = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-#     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     due_date = models.DateTimeField()
+class Task(models.Model):
+    STATUS_CHOICES = [
+        ('To Do', 'To Do'),
+        ('In Progress', 'In Progress'),
+        ('Done', 'Done')
+    ]
+    PRIORITY_CHOICES = [
+        ('Low', 'Low'), 
+        ('Medium', 'Medium'),
+        ('High', 'High')
+    ]
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES)
+    priority = models.CharField(max_length=20, choices=PRIORITY_CHOICES)
+    assigned_to = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    due_date = models.DateTimeField()
     
-#     class Meta:
-#         db_table = "tasks"
+    class Meta:
+        db_table = "tasks"
 
 
 # class Comment(models.Model):   
