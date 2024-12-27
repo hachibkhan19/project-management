@@ -53,4 +53,3 @@ class CommentViewSet(viewsets.ModelViewSet):
             raise ValidationError({"task": "Task does not exist."})
         
         serializer.save(task=task)
-        
