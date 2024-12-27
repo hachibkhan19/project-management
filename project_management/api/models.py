@@ -12,17 +12,17 @@ class Project(models.Model):
         db_table = "projects"
 
 
-# class ProjectMember(models.Model):
-#     ROLE_CHOICES = [
-#         ('Admin', 'Admin'), 
-#         ('Member', 'Member')
-#     ]
-#     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     Role = models.CharField(max_length=10, choices=ROLE_CHOICES)
+class ProjectMember(models.Model):
+    ROLE_CHOICES = [
+        ('Admin', 'Admin'), 
+        ('Member', 'Member')
+    ]
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    Role = models.CharField(max_length=10, choices=ROLE_CHOICES)
     
-#     class Meta:
-#         db_table = "project_members"
+    class Meta:
+        db_table = "project_members"
 
 
 # class Task(models.Model):
