@@ -49,12 +49,12 @@ class Task(models.Model):
         db_table = "tasks"
 
 
-# class Comment(models.Model):   
-#     content = models.TextField()
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     task = models.ForeignKey(Task, on_delete=models.CASCADE)
-#     created_at = models.DateTimeField(auto_now_add=True)
+class Comment(models.Model):   
+    content = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
     
-#     class Meta:
-#         db_table = "comments"
+    class Meta:
+        db_table = "comments"
         
